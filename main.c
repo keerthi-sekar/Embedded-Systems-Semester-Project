@@ -16,11 +16,11 @@
 #define Green RB6
 #define Red RB7
 
-int THRESHOLD = 10;
+int THRESHOLD = 3;
 int mode = 1;
 int count = 0;
 
-void servoRotate90() //90 Degree
+void servoRotate90() //90 Degree - reset motion
 {
     Alarm = 1;
   unsigned int i;
@@ -35,15 +35,15 @@ void servoRotate90() //90 Degree
   Alarm = 1;
 }
 
-void servoRotate180() //180 Degree
+void servoRotate180() //180 Degree - downward motion
 {
   unsigned int i;
   for(i=0;i<50;i++)
   {
     Servo = 1;
-    __delay_us(3500); //2000
+    __delay_us(4000); //2000
     Servo = 0;
-    __delay_us(18000);
+    __delay_us(16000);
   }
 }
 
@@ -72,12 +72,14 @@ void main(void){
                 while(IRR == 0){}
                 Red = 1;
                 Green = 0;
+                //__delay_ms(1000);
                 servoRotate90();
                 __delay_ms(250);
                 servoRotate180();
                 __delay_ms(1000);
                 Red = 0;
                 Green = 1;
+                __delay_ms(1500);
             }
         }
         if (mode == 2){
@@ -89,6 +91,7 @@ void main(void){
                 if (count >= THRESHOLD){
                     Red = 1;
                     Green = 0;
+                   // __delay_ms(1000);
                     servoRotate90();
                     __delay_ms(250);
                     servoRotate180();
