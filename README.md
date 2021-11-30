@@ -1,5 +1,5 @@
-# Automatic Disinfectant System
-Embedded Systems Semester Project: Automatic Disinfectant System was completed in Fall 2021 (October - November 2021)
+# Automatic Disinfecting System
+Embedded Systems Semester Project: Automatic Disinfecting System was completed in Fall 2021 (October - November 2021)
 
 Team Members: Keerthi Sekar, Jacob Leisten, Arunesh Mishra
 
